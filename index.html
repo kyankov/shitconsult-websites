@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Щит Консулт — Избери версия</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0a1628;
+            color: #f0f0f5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        p {
+            color: rgba(240,240,245,0.6);
+            margin-bottom: 48px;
+            font-size: 1.1rem;
+        }
+        .cards {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        a.card {
+            display: block;
+            width: 280px;
+            padding: 40px 32px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            text-decoration: none;
+            color: #f0f0f5;
+            transition: all 0.3s ease;
+        }
+        a.card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(37,99,235,0.4);
+            box-shadow: 0 12px 40px rgba(37,99,235,0.15);
+            background: rgba(255,255,255,0.06);
+        }
+        .card h2 { font-size: 1.4rem; margin-bottom: 8px; }
+        .card .tag {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .tag-v1 { background: rgba(37,99,235,0.15); color: #60a5fa; }
+        .tag-v2 { background: rgba(8,145,178,0.15); color: #22d3ee; }
+        .tag-v3 { background: rgba(217,119,6,0.15); color: #fbbf24; }
+        .card p { color: rgba(240,240,245,0.5); font-size: 0.9rem; margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Щит Консулт</h1>
+        <p>Избери версия на уебсайта</p>
+        <div class="cards">
+            <a href="v1/" class="card">
+                <span class="tag tag-v1">Версия 1</span>
+                <h2>Класическа</h2>
+                <p>Чист HTML/CSS, тъмно синьо + злато, статични анимации</p>
+            </a>
+            <a href="v2/" class="card">
+                <span class="tag tag-v2">Версия 2</span>
+                <h2>Динамична</h2>
+                <p>GSAP анимации, частици, custom курсор, glassmorphism</p>
+            </a>
+            <a href="v3/" class="card">
+                <span class="tag tag-v3">Версия 3</span>
+                <h2>Модерна</h2>
+                <p>Bento grid, градиенти, 3D ефекти, максимално интерактивна</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

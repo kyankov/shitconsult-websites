@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Щит Консулт - Професионални счетоводни и застрахователни услуги в България.">
+    <title>Щит Консулт | Счетоводство &amp; Застраховки</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+    <!-- GSAP + ScrollTrigger + SplitText -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cursor follower -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <img src="logo-transparent.png" alt="" class="preloader-logo">
+            <div class="preloader-bar"><div class="preloader-fill" id="preloaderFill"></div></div>
+        </div>
+    </div>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="logo">
+                <img src="logo-transparent.png" alt="Щит Консулт" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-name">ЩИТ <span class="gold">КОНСУЛТ</span></span>
+                    <span class="logo-sub">СЧЕТОВОДСТВО &bull; ЗАСТРАХОВКИ</span>
+                </div>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active" data-text="Начало">Начало</a>
+                <a href="#services" class="nav-link" data-text="Услуги">Услуги</a>
+                <a href="#about" class="nav-link" data-text="За нас">За нас</a>
+                <a href="#team" class="nav-link" data-text="Екип">Екип</a>
+                <a href="#faq" class="nav-link" data-text="Въпроси">Въпроси</a>
+                <a href="#contact" class="nav-cta">
+                    <span>Контакти</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Меню">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home">
+        <canvas class="hero-particles" id="heroParticles"></canvas>
+        <div class="hero-gradient"></div>
+        <div class="hero-grid-bg"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge" data-animate="fade-up">
+                <span class="badge-dot"></span>
+                Професионални финансови услуги
+            </div>
+
+            <h1 class="hero-title" data-animate="split">
+                Вашият <span class="gold-text">щит</span> в света на
+                <br><span class="hero-title-italic">финансите и застраховането</span>
+            </h1>
+
+            <p class="hero-desc" data-animate="fade-up" data-delay="0.4">
+                Професионални счетоводни и застрахователни услуги за вашия бизнес и спокойствие.
+                Доверете се на експертите с над 15 години опит.
+            </p>
+
+            <div class="hero-actions" data-animate="fade-up" data-delay="0.6">
+                <a href="#services" class="btn-primary">
+                    <span>Нашите услуги</span>
+                    <div class="btn-shine"></div>
+                </a>
+                <a href="#contact" class="btn-ghost">
+                    <span>Свържете се</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <div class="hero-stats" data-animate="fade-up" data-delay="0.8">
+                <div class="hero-stat">
+                    <span class="hero-stat-num" data-count="500">0</span>
+                    <span class="hero-stat-label">Доволни клиенти</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num" data-count="15">0</span>
+                    <span class="hero-stat-label">Години опит</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num" data-count="1200">0</span>
+                    <span class="hero-stat-label">Застрахователни полици</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll-indicator">
+            <span class="scroll-text">Скролни</span>
+            <div class="scroll-line"><div class="scroll-line-inner"></div></div>
+        </div>
+
+        <!-- Floating logo watermark -->
+        <div class="hero-watermark">
+            <img src="logo-transparent.png" alt="">
+        </div>
+    </section>
+
+    <!-- ========== SERVICES ========== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-top" data-animate="fade-up">
+                <span class="section-label">/ Какво предлагаме</span>
+                <h2 class="section-heading">Нашите <span class="gold-text">услуги</span></h2>
+                <p class="section-sub">Пълен набор от счетоводни и застрахователни решения, съобразени с вашите нужди</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-animate="card">
+                    <div class="card-glow"></div>
+                    <div class="card-number">01</div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>
+                    </div>
+                    <h3>Счетоводство</h3>
+                    <p>Пълно счетоводно обслужване на фирми. Текущо осчетоводяване, изготвяне на финансови отчети, годишно приключване.</p>
+                    <ul class="card-tags">
+                        <li>Текущо счетоводство</li>
+                        <li>Годишни отчети</li>
+                        <li>Консултации</li>
+                    </ul>
+                    <div class="card-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </div>
+                </div>
+
+                <div class="service-card" data-animate="card">
+                    <div class="card-glow"></div>
+                    <div class="card-number">02</div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M2 8h20M8 8v13"/><path d="M12 12h4M12 16h4"/></svg>
+                    </div>
+                    <h3>Данъчни услуги</h3>
+                    <p>Данъчно планиране, подаване на декларации, представителство пред НАП. Оптимизация на данъчната тежест.</p>
+                    <ul class="card-tags">
+                        <li>Декларации</li>
+                        <li>ДДС</li>
+                        <li>Данъчно планиране</li>
+                    </ul>
+                    <div class="card-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </div>
+                </div>
+
+                <div class="service-card" data-animate="card">
+                    <div class="card-glow"></div>
+                    <div class="card-number">03</div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L3 7v5c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5Z"/><path d="m9 12 2 2 4-4"/></svg>
+                    </div>
+                    <h3>Застраховки</h3>
+                    <p>Пълна гама застрахователни продукти за физически и юридически лица. Най-добрите оферти от водещи компании.</p>
+                    <ul class="card-tags">
+                        <li>Имущество</li>
+                        <li>Каско & ГО</li>
+                        <li>Живот & здраве</li>
+                    </ul>
+                    <div class="card-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </div>
+                </div>
+
+                <div class="service-card" data-animate="card">
+                    <div class="card-glow"></div>
+                    <div class="card-number">04</div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>ТРЗ и личен състав</h3>
+                    <p>Обработка на заплати, трудови договори, осигуровки. Пълно администриране на трудовите правоотношения.</p>
+                    <ul class="card-tags">
+                        <li>Заплати</li>
+                        <li>Договори</li>
+                        <li>Осигуровки</li>
+                    </ul>
+                    <div class="card-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </div>
+                </div>
+
+                <div class="service-card" data-animate="card">
+                    <div class="card-glow"></div>
+                    <div class="card-number">05</div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <h3>Фирмени регистрации</h3>
+                    <p>Регистрация на ЕООД, ООД, ЕТ в Търговския регистър. Промени в обстоятелствата и ликвидация.</p>
+                    <ul class="card-tags">
+                        <li>Регистрация</li>
+                        <li>Промени в ТР</li>
+                        <li>Ликвидация</li>
+                    </ul>
+                    <div class="card-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </div>
+                </div>
+
+                <div class="service-card" data-animate="card">
+                    <div class="card-glow"></div>
+                    <div class="card-number">06</div>
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/><path d="M12 7v2M12 13h.01"/></svg>
+                    </div>
+                    <h3>Бизнес консултации</h3>
+                    <p>Стратегически съвети за развитие на бизнеса. Финансов анализ, бизнес планове, оптимизация на процесите.</p>
+                    <ul class="card-tags">
+                        <li>Анализ</li>
+                        <li>Планиране</li>
+                        <li>Оптимизация</li>
+                    </ul>
+                    <div class="card-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-layout">
+                <div class="about-visual" data-animate="fade-right">
+                    <div class="about-image-wrapper">
+                        <div class="about-img-placeholder">
+                            <img src="logo-transparent.png" alt="Щит Консулт" class="about-logo-display">
+                        </div>
+                        <div class="about-float-card">
+                            <span class="float-number">15+</span>
+                            <span class="float-label">години<br>опит</span>
+                        </div>
+                        <div class="about-float-card card-2">
+                            <span class="float-number">500+</span>
+                            <span class="float-label">доволни<br>клиенти</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-text" data-animate="fade-left">
+                    <span class="section-label">/ Кои сме ние</span>
+                    <h2 class="section-heading">За <span class="gold-text">Щит Консулт</span></h2>
+                    <p class="about-p">
+                        Щит Консулт е водеща компания в сферата на счетоводните и застрахователните услуги в България.
+                        С екип от висококвалифицирани специалисти, ние предоставяме цялостни решения за бизнеса и личните
+                        финанси на нашите клиенти.
+                    </p>
+                    <p class="about-p">
+                        Нашата мисия е да бъдем надеждният щит, зад който всеки клиент може да се чувства защитен и уверен
+                        в своите финансови решения.
+                    </p>
+
+                    <div class="about-features">
+                        <div class="about-feat">
+                            <div class="feat-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                            </div>
+                            <div>
+                                <strong>Индивидуален подход</strong>
+                                <p>Всеки клиент получава персонализирано внимание и решения</p>
+                            </div>
+                        </div>
+                        <div class="about-feat">
+                            <div class="feat-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                            </div>
+                            <div>
+                                <strong>Лицензирани специалисти</strong>
+                                <p>Сертифицирани счетоводители и застрахователни брокери</p>
+                            </div>
+                        </div>
+                        <div class="about-feat">
+                            <div class="feat-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                            </div>
+                            <div>
+                                <strong>Пълно покритие</strong>
+                                <p>От регистрация на фирма до годишно приключване и застраховане</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MARQUEE ========== -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>СЧЕТОВОДСТВО</span><span class="marquee-dot">&diams;</span>
+                <span>ЗАСТРАХОВКИ</span><span class="marquee-dot">&diams;</span>
+                <span>ДАНЪЦИ</span><span class="marquee-dot">&diams;</span>
+                <span>ТРЗ</span><span class="marquee-dot">&diams;</span>
+                <span>РЕГИСТРАЦИИ</span><span class="marquee-dot">&diams;</span>
+                <span>КОНСУЛТАЦИИ</span><span class="marquee-dot">&diams;</span>
+                <span>СЧЕТОВОДСТВО</span><span class="marquee-dot">&diams;</span>
+                <span>ЗАСТРАХОВКИ</span><span class="marquee-dot">&diams;</span>
+                <span>ДАНЪЦИ</span><span class="marquee-dot">&diams;</span>
+                <span>ТРЗ</span><span class="marquee-dot">&diams;</span>
+                <span>РЕГИСТРАЦИИ</span><span class="marquee-dot">&diams;</span>
+                <span>КОНСУЛТАЦИИ</span><span class="marquee-dot">&diams;</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== TEAM ========== -->
+    <section class="team" id="team">
+        <div class="container">
+            <div class="section-top" data-animate="fade-up">
+                <span class="section-label">/ Нашите професионалисти</span>
+                <h2 class="section-heading">Запознайте се с <span class="gold-text">екипа</span></h2>
+                <p class="section-sub">Опитни специалисти, посветени на вашия успех</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card" data-animate="card">
+                    <div class="team-img">
+                        <div class="team-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div class="team-overlay">
+                            <span>Виж профил</span>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Иван Иванов</h3>
+                        <span class="team-role">Управител / Главен счетоводител</span>
+                        <p>Дипломиран експерт-счетоводител с над 15 години опит в корпоративното счетоводство.</p>
+                    </div>
+                </div>
+
+                <div class="team-card" data-animate="card">
+                    <div class="team-img">
+                        <div class="team-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div class="team-overlay">
+                            <span>Виж профил</span>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Мария Петрова</h3>
+                        <span class="team-role">Застрахователен консултант</span>
+                        <p>Сертифициран застрахователен брокер с богат опит в имуществените застраховки.</p>
+                    </div>
+                </div>
+
+                <div class="team-card" data-animate="card">
+                    <div class="team-img">
+                        <div class="team-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div class="team-overlay">
+                            <span>Виж профил</span>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h3>Георги Димитров</h3>
+                        <span class="team-role">Данъчен консултант</span>
+                        <p>Специалист по данъчно право и оптимизация. Представител пред НАП и НОИ.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-top center" data-animate="fade-up">
+                <span class="section-label">/ Отзиви</span>
+                <h2 class="section-heading">Какво казват <span class="gold-text">клиентите</span></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card glass" data-animate="card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Работим с Щит Консулт от 5 години и сме изключително доволни. Професионализъм, коректност и винаги навременна информация за промени в законодателството."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">СТ</div>
+                        <div>
+                            <strong>Стефан Тодоров</strong>
+                            <span>Управител, ТехноСофт ООД</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass" data-animate="card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Благодаря на екипа за бързото и ефективно обслужване! Застраховаха имуществото ни с най-добрите условия на пазара. Препоръчвам на всеки."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ЕП</div>
+                        <div>
+                            <strong>Елена Попова</strong>
+                            <span>Собственик, Магазин Елена</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass" data-animate="card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Мария ни помогна да изберем най-подходящата застраховка за нашия автопарк. Спестихме над 30% спрямо предишните ни полици. Топ обслужване!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ВД</div>
+                        <div>
+                            <strong>Виктор Димов</strong>
+                            <span>Управител, ТрансЕкспрес ЕООД</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA BANNER ========== -->
+    <section class="cta-banner">
+        <div class="cta-bg-glow"></div>
+        <div class="container">
+            <div class="cta-inner" data-animate="fade-up">
+                <h2>Готови ли сте да защитите <span class="gold-text">бизнеса си?</span></h2>
+                <p>Свържете се с нас за безплатна консултация и индивидуална оферта</p>
+                <div class="cta-actions">
+                    <a href="#contact" class="btn-primary">
+                        <span>Безплатна консултация</span>
+                        <div class="btn-shine"></div>
+                    </a>
+                    <a href="tel:+35929001234" class="btn-ghost">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.8.33 1.6.6 2.36a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.76.27 1.56.47 2.36.6A2 2 0 0 1 22 16.92Z"/></svg>
+                        <span>+359 2 900 1234</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="faq-layout">
+                <div class="faq-left" data-animate="fade-right">
+                    <span class="section-label">/ Имате въпроси?</span>
+                    <h2 class="section-heading">Често задавани<br><span class="gold-text">въпроси</span></h2>
+                    <p class="faq-hint">Не намирате отговор? Свържете се с нас директно.</p>
+                    <a href="#contact" class="btn-primary btn-sm">
+                        <span>Пишете ни</span>
+                        <div class="btn-shine"></div>
+                    </a>
+                </div>
+
+                <div class="faq-right" data-animate="fade-left">
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>Какви документи са необходими за счетоводно обслужване?</span>
+                            <div class="faq-icon"><span></span><span></span></div>
+                        </button>
+                        <div class="faq-a">
+                            <p>За стартиране на счетоводно обслужване са необходими: копие на регистрацията на фирмата (от Търговски регистър), данъчна регистрация, банкови извлечения, фактури за приходи и разходи, и договори с контрагенти.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>Колко струва месечното счетоводно обслужване?</span>
+                            <div class="faq-icon"><span></span><span></span></div>
+                        </button>
+                        <div class="faq-a">
+                            <p>Цената зависи от обема на дейността, броя на документите и вида на фирмата. Предлагаме индивидуални оферти, съобразени с вашите нужди. Свържете се с нас за безплатна консултация и оферта.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>Какви видове застраховки предлагате?</span>
+                            <div class="faq-icon"><span></span><span></span></div>
+                        </button>
+                        <div class="faq-a">
+                            <p>Предлагаме пълна гама от застрахователни продукти: Гражданска отговорност, Автокаско, имуществени застраховки, застраховки живот и здраве, професионална отговорност, трудова злополука и други.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>Предлагате ли онлайн обслужване?</span>
+                            <div class="faq-icon"><span></span><span></span></div>
+                        </button>
+                        <div class="faq-a">
+                            <p>Да! Работим както присъствено, така и напълно дистанционно. Можете да изпращате документи по имейл или чрез нашата защитена платформа. Консултации провеждаме и по телефон, и по видеовръзка.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-q">
+                            <span>Какъв е срокът за подаване на годишна данъчна декларация?</span>
+                            <div class="faq-icon"><span></span><span></span></div>
+                        </button>
+                        <div class="faq-a">
+                            <p>Годишната данъчна декларация за юридически лица се подава до 30 юни, а за физически лица — до 30 април. Препоръчваме да се свържете с нас поне месец предварително.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-top center" data-animate="fade-up">
+                <span class="section-label">/ Свържете се с нас</span>
+                <h2 class="section-heading">Контакти и <span class="gold-text">запитвания</span></h2>
+                <p class="section-sub">Готови сме да отговорим на вашите въпроси</p>
+            </div>
+
+            <div class="contact-layout">
+                <div class="contact-cards" data-animate="fade-right">
+                    <div class="contact-card glass">
+                        <div class="cc-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <strong>Адрес</strong>
+                        <p>гр. София, бул. "Витоша" 100<br>ет. 3, офис 305</p>
+                    </div>
+                    <div class="contact-card glass">
+                        <div class="cc-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.8.33 1.6.6 2.36a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.76.27 1.56.47 2.36.6A2 2 0 0 1 22 16.92Z"/></svg>
+                        </div>
+                        <strong>Телефон</strong>
+                        <p><a href="tel:+35929001234">+359 2 900 1234</a></p>
+                        <p><a href="tel:+359888123456">+359 888 123 456</a></p>
+                    </div>
+                    <div class="contact-card glass">
+                        <div class="cc-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 4-10 8L2 4"/></svg>
+                        </div>
+                        <strong>Имейл</strong>
+                        <p><a href="mailto:office@shitconsult.bg">office@shitconsult.bg</a></p>
+                    </div>
+                    <div class="contact-card glass">
+                        <div class="cc-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <strong>Работно време</strong>
+                        <p>Пон - Пет: 09:00 - 18:00</p>
+                        <p>Събота: 10:00 - 14:00</p>
+                    </div>
+                </div>
+
+                <form class="contact-form glass" id="contactForm" data-animate="fade-left">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <input type="text" id="name" name="name" required placeholder=" ">
+                            <label for="name">Вашето име</label>
+                            <div class="field-line"></div>
+                        </div>
+                        <div class="form-field">
+                            <input type="tel" id="phone" name="phone" required placeholder=" ">
+                            <label for="phone">Телефон</label>
+                            <div class="field-line"></div>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <input type="email" id="email" name="email" required placeholder=" ">
+                        <label for="email">Имейл</label>
+                        <div class="field-line"></div>
+                    </div>
+                    <div class="form-field">
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected></option>
+                            <option value="accounting">Счетоводство</option>
+                            <option value="tax">Данъчни услуги</option>
+                            <option value="insurance">Застраховки</option>
+                            <option value="payroll">ТРЗ</option>
+                            <option value="registration">Фирмени регистрации</option>
+                            <option value="other">Друго</option>
+                        </select>
+                        <label for="subject">Относно</label>
+                        <div class="field-line"></div>
+                    </div>
+                    <div class="form-field">
+                        <textarea id="message" name="message" rows="4" required placeholder=" "></textarea>
+                        <label for="message">Съобщение</label>
+                        <div class="field-line"></div>
+                    </div>
+                    <button type="submit" class="btn-primary btn-full">
+                        <span>Изпратете запитване</span>
+                        <div class="btn-shine"></div>
+                    </button>
+                    <div class="form-msg" id="formMsg"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <img src="logo-transparent.png" alt="Щит Консулт" class="logo-img">
+                        <div class="logo-text">
+                            <span class="logo-name">ЩИТ <span class="gold">КОНСУЛТ</span></span>
+                            <span class="logo-sub">СЧЕТОВОДСТВО &bull; ЗАСТРАХОВКИ</span>
+                        </div>
+                    </a>
+                    <p>Вашият надежден партньор в счетоводството и застраховането. Професионализъм и грижа за всеки клиент.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Навигация</h4>
+                    <a href="#home">Начало</a>
+                    <a href="#services">Услуги</a>
+                    <a href="#about">За нас</a>
+                    <a href="#contact">Контакти</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Услуги</h4>
+                    <a href="#services">Счетоводство</a>
+                    <a href="#services">Данъчни услуги</a>
+                    <a href="#services">Застраховки</a>
+                    <a href="#services">ТРЗ</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Контакти</h4>
+                    <p>гр. София, бул. "Витоша" 100</p>
+                    <a href="tel:+35929001234">+359 2 900 1234</a>
+                    <a href="mailto:office@shitconsult.bg">office@shitconsult.bg</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Щит Консулт. Всички права запазени.</p>
+                <a href="#home" class="back-to-top">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

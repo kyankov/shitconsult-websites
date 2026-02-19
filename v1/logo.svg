@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" fill="none">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a4a7f"/>
+      <stop offset="50%" stop-color="#1a3461"/>
+      <stop offset="100%" stop-color="#0d1f3c"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dbc06e"/>
+      <stop offset="50%" stop-color="#c9a84c"/>
+      <stop offset="100%" stop-color="#a88a30"/>
+    </linearGradient>
+    <linearGradient id="goldGrad2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dbc06e"/>
+      <stop offset="100%" stop-color="#a88a30"/>
+    </linearGradient>
+    <linearGradient id="blueEdge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3d6db5"/>
+      <stop offset="100%" stop-color="#1a3461"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Shield outer shape -->
+  <path d="M200 10 L370 70 C370 70 375 200 360 270 C340 360 200 410 200 410 C200 410 60 360 40 270 C25 200 30 70 30 70 Z"
+        fill="url(#blueEdge)" stroke="#4a7cc9" stroke-width="3"/>
+
+  <!-- Shield inner shape -->
+  <path d="M200 30 L350 82 C350 82 354 195 342 258 C325 338 200 385 200 385 C200 385 75 338 58 258 C46 195 50 82 50 82 Z"
+        fill="url(#shieldGrad)" stroke="url(#goldGrad)" stroke-width="4"/>
+
+  <!-- Decorative inner border -->
+  <path d="M200 52 L330 97 C330 97 334 195 323 250 C309 320 200 360 200 360 C200 360 91 320 77 250 C66 195 70 97 70 97 Z"
+        fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="0" opacity="0.4"/>
+
+  <!-- Corner brackets top-left -->
+  <path d="M95 75 L95 110 M95 75 L140 62" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round"/>
+  <!-- Corner brackets top-right -->
+  <path d="M305 75 L305 110 M305 75 L260 62" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round"/>
+  <!-- Corner brackets bottom-left -->
+  <path d="M85 250 L95 290 M85 250 L120 260" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <!-- Corner brackets bottom-right -->
+  <path d="M315 250 L305 290 M315 250 L280 260" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- ЩИТ text at top -->
+  <text x="200" y="85" text-anchor="middle" font-family="serif" font-weight="700" font-size="38" fill="url(#goldGrad)" letter-spacing="8">ЩИТ</text>
+
+  <!-- Bar chart (left side) -->
+  <rect x="100" y="210" width="16" height="50" rx="2" fill="url(#goldGrad2)" opacity="0.8"/>
+  <rect x="122" y="190" width="16" height="70" rx="2" fill="url(#goldGrad2)" opacity="0.85"/>
+  <rect x="144" y="165" width="16" height="95" rx="2" fill="url(#goldGrad2)" opacity="0.9"/>
+  <!-- Arrow up -->
+  <path d="M130 175 L152 130 L162 145" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M152 130 L152 148 L140 140 Z" fill="url(#goldGrad)"/>
+
+  <!-- Lion (center, simplified heraldic) -->
+  <!-- Body -->
+  <path d="M195 155 C185 155 175 165 175 180 C175 195 180 205 185 215
+           C188 220 185 228 182 235 L178 250 C178 255 182 258 187 255
+           L195 245 L195 260 C195 265 200 268 205 265 L208 255
+           L215 265 C220 268 225 265 225 260 L225 245 L232 255
+           C237 258 242 255 242 250 L238 235 C235 228 232 220 235 215
+           C240 205 245 195 245 180 C245 165 235 155 225 155"
+        fill="url(#goldGrad2)" opacity="0.9"/>
+  <!-- Head -->
+  <ellipse cx="210" cy="148" rx="22" ry="20" fill="url(#goldGrad2)"/>
+  <!-- Mane -->
+  <path d="M188 140 C182 130 185 120 195 118 C198 110 208 108 215 112
+           C222 108 232 110 235 118 C245 120 248 130 242 140
+           C246 145 244 155 238 158 C232 162 225 160 220 155
+           C215 158 205 158 200 155 C195 160 188 162 182 158
+           C176 155 174 145 178 140 Z"
+        fill="url(#goldGrad)" opacity="0.7"/>
+  <!-- Eye -->
+  <circle cx="204" cy="145" r="3" fill="#0d1f3c"/>
+  <!-- Mouth -->
+  <path d="M198 155 Q205 162 215 155" stroke="#0d1f3c" stroke-width="1.5" fill="none"/>
+
+  <!-- Umbrella (right side) -->
+  <path d="M275 170 C275 145 255 130 240 130 C240 130 240 145 240 155
+           C250 155 260 150 265 155 C270 150 275 155 280 155 C280 145 275 145 275 170"
+        fill="url(#goldGrad2)" opacity="0.85"/>
+  <line x1="258" y1="130" x2="258" y2="195" stroke="url(#goldGrad)" stroke-width="2.5"/>
+  <path d="M258 195 C258 205 268 205 268 195" stroke="url(#goldGrad)" stroke-width="2.5" fill="none"/>
+  <!-- Handle top -->
+  <line x1="258" y1="125" x2="258" y2="130" stroke="url(#goldGrad)" stroke-width="2"/>
+
+  <!-- Coins (below umbrella) -->
+  <ellipse cx="260" cy="230" rx="18" ry="6" fill="url(#goldGrad2)" opacity="0.7"/>
+  <rect x="242" y="222" width="36" height="8" fill="url(#goldGrad2)" opacity="0.6"/>
+  <ellipse cx="260" cy="222" rx="18" ry="6" fill="url(#goldGrad2)" opacity="0.8"/>
+  <rect x="242" y="214" width="36" height="8" fill="url(#goldGrad2)" opacity="0.5"/>
+  <ellipse cx="260" cy="214" rx="18" ry="6" fill="url(#goldGrad2)" opacity="0.9"/>
+  <!-- Dollar signs on coins -->
+  <text x="260" y="218" text-anchor="middle" font-size="8" fill="#0d1f3c" font-weight="700">$</text>
+  <text x="260" y="226" text-anchor="middle" font-size="8" fill="#0d1f3c" font-weight="700">$</text>
+
+  <!-- Hexagonal frame around lion -->
+  <path d="M210 100 L250 120 L250 175 L210 195 L170 175 L170 120 Z"
+        fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- КОНСУЛТ text -->
+  <text x="200" y="445" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="700" font-size="42" fill="#3d6db5" letter-spacing="6">КОНСУЛТ</text>
+
+  <!-- Subtitle -->
+  <text x="200" y="472" text-anchor="middle" font-family="'Montserrat', sans-serif" font-weight="500" font-size="14" fill="url(#goldGrad)" letter-spacing="4">СЧЕТОВОДСТВО &bull; ЗАСТРАХОВКИ</text>
+</svg>
