@@ -1150,7 +1150,7 @@ img { max-width: 100%; height: auto; }
         background: rgba(10, 22, 40, 0.98);
         backdrop-filter: blur(20px);
         flex-direction: column;
-        padding: 90px 28px 32px 16px;
+        padding: 90px 28px 32px 8px;
         gap: 8px;
         transition: right 0.4s ease;
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
