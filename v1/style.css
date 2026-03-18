@@ -358,7 +358,7 @@ img { max-width: 100%; height: auto; }
     position: relative;
     z-index: 2;
     text-align: center;
-    padding: 120px 24px 80px;
+    padding: 80px 24px 80px;
 }
 
 .hero-title {
