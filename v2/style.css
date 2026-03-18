@@ -179,6 +179,7 @@ img { max-width: 100%; height: auto; }
 .nav-links li {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .nav-links a {
@@ -1178,9 +1179,9 @@ img { max-width: 100%; height: auto; }
     /* Navbar — solid background on mobile */
     .navbar { background: rgba(10, 22, 40, 0.95); backdrop-filter: blur(10px); }
 
-    /* Hero — flex-start prevents tall content from being clipped above navbar */
-    .hero { align-items: flex-start; }
-    .hero-content { padding: 100px 16px 60px; width: 100%; }
+    /* Hero — padding-top on section pushes content below fixed navbar */
+    .hero { align-items: flex-start; padding-top: 75px; min-height: calc(100vh - 75px); }
+    .hero-content { padding: 30px 16px 60px; width: 100%; }
     .hero-stats { gap: 24px; }
     .stat-number { font-size: 2rem; }
     .hero-scroll { display: none; }
@@ -1242,7 +1243,7 @@ img { max-width: 100%; height: auto; }
 
     .hero-title { font-size: 1.8rem; }
     .hero-subtitle { font-size: 0.95rem; }
-    .hero-content { padding: 95px 16px 40px; }
+    .hero-content { padding: 25px 16px 40px; }
 
     .hero-buttons {
         flex-direction: column;
