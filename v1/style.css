@@ -94,7 +94,7 @@ img { max-width: 100%; height: auto; }
     height: 52px;
     width: auto;
     transition: height var(--transition);
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
 }
 
 .navbar.scrolled .logo-img {
@@ -104,33 +104,49 @@ img { max-width: 100%; height: auto; }
 .logo-text-group {
     display: flex;
     flex-direction: column;
-    line-height: 1.1;
+    line-height: 1.15;
+    gap: 2px;
 }
 
 .logo-name {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: var(--white);
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(180deg,
+        #f7edd0 0%,
+        #d4a840 20%,
+        #f0d060 45%,
+        #b08020 70%,
+        #d4a840 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
 }
 
 .logo-tagline {
-    font-size: 0.55rem;
-    font-weight: 500;
-    color: var(--gray-300);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 600;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    margin-top: 2px;
+    background: linear-gradient(180deg,
+        #c8a84b 0%,
+        #907030 50%,
+        #c8a84b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .navbar.scrolled .logo-name {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
 }
 
 .navbar.scrolled .logo-tagline {
-    font-size: 0.48rem;
+    font-size: 0.5rem;
 }
 
 .footer-logo {
@@ -265,12 +281,12 @@ img { max-width: 100%; height: auto; }
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 550px;
-    height: 550px;
-    opacity: 0.04;
+    width: 680px;
+    height: 680px;
+    opacity: 0.10;
     z-index: 0;
     pointer-events: none;
-    filter: grayscale(30%);
+    filter: drop-shadow(0 0 40px rgba(197,166,106,0.15));
 }
 
 .hero-bg-logo img {
@@ -286,10 +302,9 @@ img { max-width: 100%; height: auto; }
     transform: translateY(-50%);
     width: 400px;
     height: 400px;
-    opacity: 0.03;
+    opacity: 0.06;
     z-index: 0;
     pointer-events: none;
-    filter: grayscale(20%);
 }
 
 .section-bg-logo.right {
