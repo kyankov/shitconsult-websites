@@ -4,89 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Щит Консулт — Избери версия</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Russo+One&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background: #0a1628;
             color: #f0f0f5;
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-        }
-        .container {
-            text-align: center;
+            gap: 48px;
             padding: 40px 20px;
         }
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 12px;
+        .logo-title { text-align: center; }
+        .logo-title h1 {
+            font-family: 'Russo One', sans-serif;
+            font-size: 2.2rem;
+            background: linear-gradient(180deg, #f7edd0 0%, #d4a840 30%, #f0d060 55%, #b08020 80%, #d4a840 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
         }
-        p {
-            color: rgba(240,240,245,0.6);
-            margin-bottom: 48px;
-            font-size: 1.1rem;
+        .logo-title p {
+            color: rgba(201,168,76,0.6);
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 6px;
         }
-        .cards {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+        .cards { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; }
         a.card {
-            display: block;
-            width: 280px;
-            padding: 40px 32px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            width: 240px;
+            padding: 36px 28px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(201,168,76,0.15);
+            border-radius: 16px;
             text-decoration: none;
             color: #f0f0f5;
             transition: all 0.3s ease;
         }
         a.card:hover {
             transform: translateY(-6px);
-            border-color: rgba(37,99,235,0.4);
-            box-shadow: 0 12px 40px rgba(37,99,235,0.15);
-            background: rgba(255,255,255,0.06);
+            border-color: rgba(201,168,76,0.4);
+            box-shadow: 0 12px 40px rgba(201,168,76,0.1);
+            background: rgba(201,168,76,0.05);
         }
-        .card h2 { font-size: 1.4rem; margin-bottom: 8px; }
-        .card .tag {
-            display: inline-block;
+        .version-badge {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             padding: 4px 14px;
             border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 16px;
+            background: rgba(201,168,76,0.12);
+            color: #c8a84b;
         }
-        .tag-v1 { background: rgba(37,99,235,0.15); color: #60a5fa; }
-        .tag-v2 { background: rgba(8,145,178,0.15); color: #22d3ee; }
-        .tag-v3 { background: rgba(217,119,6,0.15); color: #fbbf24; }
-        .card p { color: rgba(240,240,245,0.5); font-size: 0.9rem; margin-bottom: 0; }
+        .card h2 { font-family: 'Russo One', sans-serif; font-size: 1.3rem; color: #fff; letter-spacing: 1px; }
+        .card p { font-size: 0.82rem; color: rgba(240,240,245,0.5); text-align: center; line-height: 1.5; }
+        .arrow { font-size: 1.2rem; color: rgba(201,168,76,0.5); transition: all 0.3s; }
+        a.card:hover .arrow { color: #c8a84b; transform: translateX(4px); }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Щит Консулт</h1>
-        <p>Избери версия на уебсайта</p>
-        <div class="cards">
-            <a href="v1/" class="card">
-                <span class="tag tag-v1">Версия 1</span>
-                <h2>Класическа</h2>
-                <p>Чист HTML/CSS, тъмно синьо + злато, статични анимации</p>
-            </a>
-            <a href="v2/" class="card">
-                <span class="tag tag-v2">Версия 2</span>
-                <h2>Динамична</h2>
-                <p>GSAP анимации, частици, custom курсор, glassmorphism</p>
-            </a>
-            <a href="v3/" class="card">
-                <span class="tag tag-v3">Версия 3</span>
-                <h2>Модерна</h2>
-                <p>Bento grid, градиенти, 3D ефекти, максимално интерактивна</p>
-            </a>
-        </div>
+    <div class="logo-title">
+        <h1>ЩИТ КОНСУЛТ</h1>
+        <p>Вашият финансов щит — Избери версия</p>
+    </div>
+    <div class="cards">
+        <a href="v1/" class="card">
+            <span class="version-badge">Версия 1</span>
+            <h2>Класическа</h2>
+            <p>Playfair Display заглавия, Montserrat текст, тъмно синьо + злато</p>
+            <span class="arrow">→</span>
+        </a>
+        <a href="v2/" class="card">
+            <span class="version-badge">Версия 2</span>
+            <h2>Russo One</h2>
+            <p>Russo One за всички заглавия и лого, Open Sans за текст</p>
+            <span class="arrow">→</span>
+        </a>
+        <a href="v3/" class="card">
+            <span class="version-badge">Версия 3</span>
+            <h2>Комбинирана</h2>
+            <p>Russo One за логото, Playfair Display + Montserrat за сайта</p>
+            <span class="arrow">→</span>
+        </a>
     </div>
 </body>
 </html>
