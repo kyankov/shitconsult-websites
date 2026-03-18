@@ -1176,8 +1176,9 @@ img { max-width: 100%; height: auto; }
     /* Navbar — solid background on mobile so it doesn't blend with hero */
     .navbar { background: rgba(10, 22, 40, 0.95); backdrop-filter: blur(10px); }
 
-    /* Hero */
-    .hero-content { padding: 110px 16px 60px; }
+    /* Hero — flex-start prevents tall content from being clipped above navbar */
+    .hero { align-items: flex-start; }
+    .hero-content { padding: 100px 16px 60px; width: 100%; }
     .hero-stats { gap: 24px; }
     .stat-number { font-size: 2rem; }
     .hero-scroll { display: none; }
@@ -1239,7 +1240,7 @@ img { max-width: 100%; height: auto; }
 
     .hero-title { font-size: 1.8rem; }
     .hero-subtitle { font-size: 0.95rem; }
-    .hero-content { padding: 110px 16px 40px; }
+    .hero-content { padding: 95px 16px 40px; }
 
     .hero-buttons {
         flex-direction: column;
