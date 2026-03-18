@@ -1173,8 +1173,11 @@ img { max-width: 100%; height: auto; }
         justify-content: center;
     }
 
+    /* Navbar — solid background on mobile so it doesn't blend with hero */
+    .navbar { background: rgba(10, 22, 40, 0.95); backdrop-filter: blur(10px); }
+
     /* Hero */
-    .hero-content { padding: 100px 16px 60px; }
+    .hero-content { padding: 110px 16px 60px; }
     .hero-stats { gap: 24px; }
     .stat-number { font-size: 2rem; }
     .hero-scroll { display: none; }
@@ -1231,12 +1234,12 @@ img { max-width: 100%; height: auto; }
 }
 
 @media (max-width: 480px) {
-    .logo-tagline { display: none; }
+    .logo-tagline { font-size: 0.42rem; letter-spacing: 1.5px; }
     .logo-name { font-size: 1rem; }
 
     .hero-title { font-size: 1.8rem; }
     .hero-subtitle { font-size: 0.95rem; }
-    .hero-content { padding: 90px 16px 40px; }
+    .hero-content { padding: 110px 16px 40px; }
 
     .hero-buttons {
         flex-direction: column;
