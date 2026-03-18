@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Open+Sans:wght@400;500;600;700&display=swap');
+
 /* ===== VARIABLES ===== */
 :root {
     --navy-dark: #0a1628;
@@ -112,7 +113,7 @@ img { max-width: 100%; height: auto; }
 .logo-name {
     font-family: 'Russo One', sans-serif;
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 400;
     letter-spacing: 1px;
     background: linear-gradient(180deg,
         #f7edd0 0%,
@@ -143,7 +144,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .navbar.scrolled .logo-name {
-    font-size: 1rem;
+    font-size: 1.15rem;
 }
 
 .navbar.scrolled .logo-tagline {
@@ -170,6 +171,14 @@ img { max-width: 100%; height: auto; }
     display: flex;
     align-items: center;
     gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
 }
 
 .nav-links a {
