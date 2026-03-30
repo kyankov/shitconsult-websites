@@ -136,17 +136,40 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Simulate form submission
         const submitBtn = form.querySelector('button[type="submit"]');
         submitBtn.disabled = true;
         submitBtn.textContent = 'Изпращане...';
 
-        setTimeout(() => {
-            showStatus('Благодарим ви! Вашето запитване беше изпратено успешно. Ще се свържем с вас скоро.', 'success');
-            form.reset();
+        // Send via FormSubmit.co → delivers to office@shtit-consult.bg
+        fetch('https://formsubmit.co/ajax/office@shtit-consult.bg', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+                name: name,
+                phone: phone,
+                email: email,
+                service: form.querySelector('#service') ? form.querySelector('#service').value : '',
+                message: message,
+                _subject: 'Ново запитване от сайта — ' + name,
+                _template: 'table'
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showStatus('Благодарим ви! Вашето запитване беше изпратено успешно. Ще се свържем с вас скоро.', 'success');
+                form.reset();
+            } else {
+                showStatus('Възникна грешка. Моля, опитайте отново или ни се обадете.', 'error');
+            }
             submitBtn.disabled = false;
             submitBtn.textContent = 'Изпратете запитване';
-        }, 1500);
+        })
+        .catch(() => {
+            showStatus('Възникна грешка. Моля, опитайте отново или ни се обадете.', 'error');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Изпратете запитване';
+        });
     });
 
     function showStatus(message, type) {
